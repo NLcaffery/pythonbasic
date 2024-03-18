@@ -1,0 +1,31 @@
+一、第一次报错
+1.报错信息
+    Traceback (most recent call last):
+      File "D:/pythonProject/pythonbasic/stu_mage/students.py", line 30, in <module>
+        stu1 = Student('1','张三')
+    TypeError: Student() takes no arguments
+
+2.原因及解决方法
+    将def __init__(self,   ,  ):函数写成了   def __int__(self,   ,   ):
+  2.1 __int__ 返回对象的整数形式
+    示例：
+    class CustomNumber:
+        def __init__(self, value):
+            self.value = value
+
+        def __int__(self):
+            return int(self.value)
+
+  2.2 __init__ 用作初始化
+    有以下三点特性
+        2.2.1.带有两个下划线开头的函数是声明该属性为私有,不能在类地外部被使用或直接访问。
+        2.2.2.init函数（方法）支持带参数的类的初始化 ，也可为声明该类的属性
+        2.2.3.init函数（方法）的第一个参数必须是 self（self为习惯用法，也可以用别的名字），后续参数则可 以自由指定，和定义函数没有任何区别。
+
+二、第二次报错
+1.报错信息
+    IndentationError: unindent does not match any outer indentation level
+
+2.原因及解决方法
+    缩进不匹配，前几个方法的缩进比后面几个方法的缩进多几个空格
+    用tab和tab+shift来控制缩进
