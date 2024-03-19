@@ -1,7 +1,7 @@
 一、第一次报错
 1.报错信息
     Traceback (most recent call last):
-      File "D:/pythonProject/pythonbasic/stu_mage/students.py", line 30, in <module>
+      File "D:/pythonProject/pythonbasic/stus_manager/students.py", line 30, in <module>
         stu1 = Student('1','张三')
     TypeError: Student() takes no arguments
 

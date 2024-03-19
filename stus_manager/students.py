@@ -1,13 +1,14 @@
 class Student:
-    def __init__(self,no,name,phone='',wx='',qq=''):
+    def __init__(self,no,name,phone='',wx='',qq='',score=0):
         self.no = no
         self.name = name
         self.phone = phone
         self.wx = wx
         self.qq = qq
+        self.score = score
 
     def __str__(self):
-        return f'{self.no},{self.name},{self.phone},{self.wx},{self.qq}'
+        return f'{self.no},{self.name},{self.phone},{self.wx},{self.qq},{self.score}'
     #f''字符串格式
 
     def get_no(self):
@@ -29,6 +30,11 @@ class Student:
         return self.qq
     def set_qq(self,qq):
         self.qq = qq
+
+    def get_score(self):
+        return self.score
+    def set_score(self,score):
+        self.score = score
 
 if __name__ == '__main__':
 

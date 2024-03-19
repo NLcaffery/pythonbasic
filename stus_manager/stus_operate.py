@@ -1,4 +1,4 @@
-from stu_mage.students import Student
+from stus_manager.students import Student
 
 
 class StusOperate:
@@ -23,8 +23,9 @@ class StusOperate:
     def add_stu(cls,no,name,**kwargs):
         if no not in cls.stus_dict:
             cls.stus_dict[no] = Student(no,name,**kwargs)
+            return f'添加成功'
         else:
-             return f'{no}已存在'
+            return f'{no}已存在'
 
         #删除
     @classmethod
@@ -32,6 +33,7 @@ class StusOperate:
         if no in cls.stus_dict:
         #删除操作
             del cls.stus_dict[no]
+            return '删除成功'
         else:
             return f'{no}不存在'
 
@@ -60,10 +62,11 @@ class StusOperate:
                 stu.set_wx(kwargs['wx'])
             if "qq" in kwargs:
                 stu.set_qq(kwargs['qq'])
+            if "score" in kwargs:
+                stu.set_score(kwargs['score'])
             return '修改成功'
         else:
             return f'{no}不存在'
-
     # 查询学员
     @classmethod
     def select_stu(cls, no):
@@ -75,15 +78,30 @@ class StusOperate:
             return f'{no}不存在'
 
     # 增加一个全班平均分的计算业务
+    @classmethod
+    def avg_score(cls):
+        # 把每一个学员的成绩累加起来，除以学员总数
+        sum_score = 0  # 总分
+        # 这里需要得到每个学员的成绩，我们需要用到循环
+        # 循环谁呢？学员都在哪里呢？
+        # {"编号1":学员对象1,"编号2":学员对象2,"编号3":学员对象3}
+        # 学员都存在stus_dict字典中，学员对象都是他的value
+        # 所以我要遍历stus_dict字典中所有的value
+        for stu in cls.stus_dict.values():
+            score = stu.get_score()
+            sum_score = sum_score + int(score)
+        avg = sum_score / len(cls.stus_dict)
+        return avg
 
 if __name__ == '__main__':
-    StusOperate.add_stu(no='1', name='张三', phone="18723773", wx='wx001')
-    StusOperate.add_stu(no='2', name='李四', phone="18723774", wx='wx002')
-    StusOperate.add_stu(no='3', name='王五', phone="18723775", wx='wx003')
+    StusOperate.add_stu(no='1', name='张三', phone="18723773", wx='wx001', score=78)
+    StusOperate.add_stu(no='2', name='李四', phone="18723774", wx='wx002', score=80)
+    StusOperate.add_stu(no='3', name='王五', phone="18723775", wx='wx003', score=91)
     StusOperate.add_stu(no='4', name='赵六', phone="18723776", wx='wx004')
-    print(StusOperate.stus_dict)
-    print(StusOperate.select_stu('3'))
-    print(StusOperate.change_stu('3', name='赵六六', qq='qq001'))
-    print(StusOperate.select_stu('3'))
-    print(StusOperate.delete_stu('3'))
-    print(StusOperate.select_stu('3'))
+    # print(StusOperate.stus_dict)
+    # print(StusOperate.select_stu('3'))
+    # print(StusOperate.change_stu('3', name='赵六六', qq='qq001'))
+    # print(StusOperate.select_stu('3'))
+    # print(StusOperate.delete_stu('3'))
+    # print(StusOperate.select_stu('3'))
+    print(StusOperate.avg_score())
