@@ -1,0 +1,8 @@
+一.第一次警告
+1.警告信息
+    WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+2.原因
+    除非您告知开发服务器它正在开发模式下运行，否则它将假定您正在生产环境中使用它，并警告您不要这样做。
+    开发服务器不适用于生产环境。它的设计目的不是特别高效，稳定或安全。
+3，解决方法
+    可以暂时先不管
