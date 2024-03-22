@@ -1,0 +1,6 @@
+1.charles,抓包，postman，HTTP协议，能够理解请求头与响应头中信息的含义 23
+2.request库，pytest框架 24
+2.pyMySQl实现参数化测试 25
+3.与pandas结合实施自动化测试 26
+4.Excel实现参数化测试 27
+
