@@ -1,4 +1,20 @@
-1.charles,抓包，postman，HTTP协议，能够理解请求头与响应头中信息的含义 23
+一.charles,抓包，postman，HTTP协议，能够理解请求头与响应头中信息的含义 23
+1.1 charles
+    1.使用Charles抓包工具，调试接口或页面，抓取内容不同
+    2.compose 可以改变发送的请求类型，和值
+    3.断点：
+    针对某个接口做断点，篡改请求报文
+    proxy->breakpoints settings
+    没实验成功
+    4.不想让一些网站或者接口，进入Charles这个代理工具
+    proxy Setting 里面加一些域名
+    或者是系统代理里：编辑代理服务器。
+
+1.3 postman接口测试
+    他给的端口没法使用，放到后面学习
+
+1.4 HTTP协议，请求头和相应头
+
 2.request库，pytest框架 24
 2.pyMySQl实现参数化测试 25
 3.与pandas结合实施自动化测试 26
