@@ -15,8 +15,10 @@
 
 1.4 HTTP协议，请求头和相应头
 
-2.request库，pytest框架 24
-2.pyMySQl实现参数化测试 25
-3.与pandas结合实施自动化测试 26
-4.Excel实现参数化测试 27
+2.request库，pytest框架 25
+    他们的接口用不了，要另外再找接口
+
+2.pyMySQl实现参数化测试 26
+3.与pandas结合实施自动化测试 27
+4.Excel实现参数化测试 28
 
