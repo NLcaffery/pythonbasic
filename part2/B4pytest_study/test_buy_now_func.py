@@ -1,9 +1,4 @@
-# !/usr/bin python3
-# encoding: utf-8 -*-
-# @file     : test_buy_now_func.py
-# @author   : 沙陌 Matongxue_2
-# @Time     : 2023/4/16 16:56
-# @Copyright: 北京码同学
+
 from requests_study.mtxshop_apis import buy_now, login_buyer
 
 # 模块级别前置

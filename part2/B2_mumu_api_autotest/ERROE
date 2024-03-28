@@ -1,0 +1,24 @@
+第一次报错
+1.报错信息
+ModuleNotFoundError: No module named ‘utils.utils‘
+1.2原因及解决办法
+若Python3在导入包的时候如果有__init__.py文件就执行，如果没有就不执行。
+查看代码文件夹utils目录下是否存在__init__.py
+若不存在：新增空文件__init__.py
+
+第二次报错
+2.1报错信息
+E   pymysql.err.ProgrammingError: (1146, "Table 'mydb2.mumu' doesn't exist")
+1.2原因表不存在，是因为sql查询语句写错
+
+第三次报错
+3.1报错信息
+test setup failed
+file D:\pythonProject\pythonbasic\part2\B2_mumu_api_autotest\test_login_case.py, line 16
+  def test_mysql_login1(get_mysql_login_data):
+file D:\pythonProject\pythonbasic\part2\B2_mumu_api_autotest\test_login_case.py, line 12
+  @pytest.fixture(params=get_mysql_case_data("登录"))
+  def get_mysql_login_data(requests):
+E       fixture 'requests' not found
+>       available fixtures: cache, capfd, capfdbinary, caplog, capsys, capsysbinary, doctest_namespace, get_mysql_login_data, monkeypatch, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
