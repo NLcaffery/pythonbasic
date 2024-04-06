@@ -22,3 +22,10 @@ file D:\pythonProject\pythonbasic\part2\B2_mumu_api_autotest\test_login_case.py,
 E       fixture 'requests' not found
 >       available fixtures: cache, capfd, capfdbinary, caplog, capsys, capsysbinary, doctest_namespace, get_mysql_login_data, monkeypatch, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory
 >       use 'pytest --fixtures [testpath]' for help on them.
+
+错误原因：
+这个错误提示表明，你尝试在get_mysql_login_data fixture函数中使用了名为requests的参数，
+但pytest无法找到名为requests的fixture。
+在你的错误报告中，可用的fixtures列表里也没有requests，因此导致了这个问题。
+在pytest中，request是一个特殊的fixture，它允许你访问关于当前测试请求的信息。
+通常，它的名字是小写的request，而不是requests。这可能是你遇到错误的原因。
