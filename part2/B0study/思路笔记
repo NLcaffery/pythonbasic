@@ -1,0 +1,23 @@
+做测试
+第一步：从数据库中拿出测试用的数据（完成）
+第二步：数据库中的测试用例鹅，对比访问网站的测试用例(完成)
+    1.assert用于验证条件是否为真，为真返回true，假返回false，并抛出异常
+    2.使用response = requests.get(url + uri,json.loads(input_data))
+    返回的是一个对象
+        response返回包括：
+            状态码（response.status_code）、
+            头部信息（response.headers）
+            以及响应的主体内容（response.text 或 response.content）
+
+        int(expect) == json.loads(response.text)["status"]
+        可以通过这种方式访问，返回主体内容的特定字段。
+
+    3.response = requests.get(url + uri, json.loads(input_data))
+        有几个问题需要注意：
+        1.requests.get() 方法的第二个参数通常是一个字典，用于发送请求时作为请求体的数据（通常用于POST请求）。
+        但在GET请求中，请求体通常不被使用，而是使用查询参数（即URL中的?key=value部分）。
+
+        2.json.loads(input_data) 是将JSON格式的字符串转换为Python对象（如字典或列表）的函数。
+
+        3.requests.get() 的返回值是一个Response对象，而不是直接的数据类型。
+        要获取响应的内容，你需要使用response.text（获取文本内容）或response.json()（如果响应是JSON格式，并直接解析为Python对象）。
