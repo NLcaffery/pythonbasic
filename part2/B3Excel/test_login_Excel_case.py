@@ -3,7 +3,7 @@ import json
 import pytest
 import requests
 # from excel_utils import get_excel_case_data
-from part2.B3Excel.utils import excel_utils as eu
+from part2.B0study.study_cart_auto_test.utils import excel_utils as eu
 
 url = "http://111.231.103.117:8083"
 @pytest.mark.parametrize(['case_id',

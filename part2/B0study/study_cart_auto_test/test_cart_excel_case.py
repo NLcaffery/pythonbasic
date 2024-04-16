@@ -2,9 +2,8 @@ import pytest
 import requests
 import json
 from config.const import url
-from part2.B0study.study_cart_auto_test import utils as ue
 
-
+import utils.excel_utils as ue
 #*
 # 1.获取token
 #2.参数化
@@ -16,7 +15,7 @@ def get_token(get_login_token):
 
 @pytest.fixture()
 def get_params():
-    return ue.get_excel_case_data("购物车")
+    return ue.get_excel_data_case("购物车")
 
 def test_excel_cart_add(get_token,get_params):
     params = get_params

@@ -1,0 +1,8 @@
+2024.4.16
+1.conftest的应用
+2.配置文件，utils文件
+3.Excel和MySq参数化的应用
+
+一，以Excel数据做接口自动化测试样例
+1.读取到Excel文件:
+        使用一个工具读取Excel文件，所以读取Excel文件的工具放在utils文件夹下
